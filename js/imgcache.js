@@ -351,7 +351,8 @@ var ImgCache = {
             ImgCache.overridables.log('No source given to getCachedFileName', LOG_LEVEL_WARNING);
             return;
         }
-        var hash = ImgCache.overridables.hash(img_src);
+       
+        var hash = ImgCache.overridables.hash(img_src.split('?')[0]);
         var ext = Helpers.fileGetExtension(Helpers.URIGetFileName(img_src));
         return hash + (ext ? ('.' + ext) : '');
     };
